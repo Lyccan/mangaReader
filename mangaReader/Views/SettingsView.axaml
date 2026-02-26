@@ -1,0 +1,66 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:mangaReader.ViewModels"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+             x:Class="mangaReader.Views.SettingsView"
+             x:DataType="vm:SettingsViewModel">
+
+    <Grid RowDefinitions="*">
+        <ScrollViewer>
+            <StackPanel Margin="30" Spacing="25" MaxWidth="500">
+                <TextBlock Text="Settings" FontSize="28" FontWeight="Bold" Foreground="#2E2E2E"/>
+                
+                <Separator Height="1" Background="#E0E0E0"/>
+                
+                <StackPanel Spacing="15">
+                    <TextBlock Text="Account" FontSize="18" FontWeight="SemiBold" Foreground="#424242"/>
+                    
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="Username" FontSize="12" Foreground="#616161"/>
+                        <TextBox Text="{Binding CurrentUser.Username}" Padding="10" Height="40" 
+                                 Background="#F5F5F5" BorderBrush="#E0E0E0" BorderThickness="1"/>
+                    </StackPanel>
+
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="Email" FontSize="12" Foreground="#616161"/>
+                        <TextBox Text="{Binding CurrentUser.Email}" Padding="10" Height="40" 
+                                 Background="#F5F5F5" BorderBrush="#E0E0E0" BorderThickness="1"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <Separator Height="1" Background="#E0E0E0"/>
+
+                <StackPanel Spacing="15">
+                    <TextBlock Text="Change Password" FontSize="18" FontWeight="SemiBold" Foreground="#424242"/>
+                    
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="New Password" FontSize="12" Foreground="#616161"/>
+                        <TextBox Text="{Binding NewPassword}" PasswordChar="•" Padding="10" Height="40" 
+                                 Background="#F5F5F5" BorderBrush="#E0E0E0" BorderThickness="1"/>
+                    </StackPanel>
+
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="Confirm Password" FontSize="12" Foreground="#616161"/>
+                        <TextBox Text="{Binding ConfirmPassword}" PasswordChar="•" Padding="10" Height="40" 
+                                 Background="#F5F5F5" BorderBrush="#E0E0E0" BorderThickness="1"/>
+                    </StackPanel>
+
+                    <Button Content="Update Password" HorizontalContentAlignment="Center" Height="40"
+                            Background="#FF6F00" Foreground="White" FontSize="12"/>
+                </StackPanel>
+
+                <Separator Height="1" Background="#E0E0E0"/>
+
+                <StackPanel Spacing="15">
+                    <Button Content="Save Settings" HorizontalContentAlignment="Center" Height="40"
+                            Background="#1976D2" Foreground="White" FontSize="14" FontWeight="Bold"/>
+                    <Button Content="Logout" HorizontalContentAlignment="Center" Height="40"
+                            Background="#C62828" Foreground="White" FontSize="14" FontWeight="Bold"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+
+</UserControl>

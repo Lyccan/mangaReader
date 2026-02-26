@@ -1,13 +1,16 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:mangaReader.ViewModels"
+        xmlns:local="using:mangaReader"
+        xmlns:conv="using:mangaReader.Converters"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="700"
         x:Class="mangaReader.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="mangaReader">
+        Title="mangaReader"
+        Width="1000" Height="700">
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
@@ -15,6 +18,37 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Window.Resources>
+        <conv:NavigationColorConverter x:Key="NavColorConverter"/>
+    </Window.Resources>
+
+    <Grid RowDefinitions="Auto,*" Background="#FAFAFA">
+        <!-- Navigation Header -->
+        <Border Grid.Row="0" Background="White" BorderBrush="#E0E0E0" BorderThickness="0,0,0,1" Padding="20,0">
+            <StackPanel Orientation="Horizontal" Spacing="0" VerticalAlignment="Center" Height="70">
+                <TextBlock Text="MangaReader" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" 
+                           Margin="0,0,30,0" Foreground="#1976D2"/>
+                
+                <Button Command="{Binding NavigateToHomeCommand}" 
+                        Content="Home" Padding="20,0" Background="Transparent" 
+                        Foreground="{Binding SelectedNavigationIndex, Converter={StaticResource NavColorConverter}, ConverterParameter=0}"
+                        FontSize="14" FontWeight="Bold"/>
+                
+                <Button Content="My Manga" Padding="20,0" Background="Transparent" 
+                        Foreground="{Binding SelectedNavigationIndex, Converter={StaticResource NavColorConverter}, ConverterParameter=1}"
+                        FontSize="14"
+                        Command="{Binding NavigateToReadCommand}"/>
+                
+                <Button Content="Settings" Padding="20,0" Background="Transparent" 
+                        Foreground="{Binding SelectedNavigationIndex, Converter={StaticResource NavColorConverter}, ConverterParameter=2}"
+                        FontSize="14"
+                        Command="{Binding NavigateToSettingsCommand}"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Content Area -->
+        <ContentControl Grid.Row="1" Content="{Binding CurrentView}" 
+                        ContentTemplate="{StaticResource {x:Type local:ViewLocator}}"/>
+    </Grid>
 
 </Window>
