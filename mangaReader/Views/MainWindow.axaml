@@ -34,12 +34,12 @@
                         Foreground="{Binding SelectedNavigationIndex, Converter={StaticResource NavColorConverter}, ConverterParameter=0}"
                         FontSize="14" FontWeight="Bold"/>
                 
-                <Button Content="My Manga" Padding="20,0" Background="Transparent" 
+                <Button Content="Meus mangás" Padding="20,0" Background="Transparent" 
                         Foreground="{Binding SelectedNavigationIndex, Converter={StaticResource NavColorConverter}, ConverterParameter=1}"
                         FontSize="14"
                         Command="{Binding NavigateToReadCommand}"/>
                 
-                <Button Content="Settings" Padding="20,0" Background="Transparent" 
+                <Button Content="Configurações" Padding="20,0" Background="Transparent" 
                         Foreground="{Binding SelectedNavigationIndex, Converter={StaticResource NavColorConverter}, ConverterParameter=2}"
                         FontSize="14"
                         Command="{Binding NavigateToSettingsCommand}"/>

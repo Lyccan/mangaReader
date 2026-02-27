@@ -13,7 +13,7 @@
                 <TextBlock Text="Home" FontSize="28" FontWeight="Bold" Foreground="#2E2E2E"/>
                 
                 <StackPanel Spacing="10">
-                    <TextBlock Text="Popular Manga" FontSize="18" FontWeight="SemiBold" Foreground="#424242"/>
+                    <TextBlock Text="Popular" FontSize="18" FontWeight="SemiBold" Foreground="#424242"/>
                     <ItemsControl ItemsSource="{Binding MangaList}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
@@ -36,7 +36,7 @@
                                                    Foreground="#757575" MaxHeight="60"/>
                                         <StackPanel Orientation="Horizontal" Spacing="15">
                                             <StackPanel Spacing="2">
-                                                <TextBlock Text="Rating" FontSize="11" Foreground="#757575"/>
+                                                <TextBlock Text="Nota" FontSize="11" Foreground="#757575"/>
                                                 <TextBlock Text="{Binding Rating}" FontSize="14" FontWeight="Bold" 
                                                            Foreground="#FF6F00"/>
                                             </StackPanel>
@@ -45,7 +45,7 @@
                                                 <TextBlock Text="{Binding Status}" FontSize="12" Foreground="#558B2F"/>
                                             </StackPanel>
                                         </StackPanel>
-                                        <Button Content="View Details" HorizontalContentAlignment="Center" 
+                                        <Button Content="Detalhes" HorizontalContentAlignment="Center" 
                                                 Background="#1976D2" Foreground="White" FontSize="12"/>
                                     </StackPanel>
                                 </Border>

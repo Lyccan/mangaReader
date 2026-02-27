@@ -10,10 +10,9 @@
     <Grid RowDefinitions="*">
         <ScrollViewer>
             <StackPanel Margin="20" Spacing="20">
-                <TextBlock Text="My Reading List" FontSize="28" FontWeight="Bold" Foreground="#2E2E2E"/>
+                <TextBlock Text="Lista de leitura" FontSize="28" FontWeight="Bold" Foreground="#2E2E2E"/>
                 
                 <StackPanel Spacing="10">
-                    <TextBlock Text="Read Manga" FontSize="18" FontWeight="SemiBold" Foreground="#424242"/>
                     <ItemsControl ItemsSource="{Binding ReadMangaList}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
@@ -36,7 +35,7 @@
                                                    Foreground="#757575" MaxHeight="60"/>
                                         <StackPanel Orientation="Horizontal" Spacing="15">
                                             <StackPanel Spacing="2">
-                                                <TextBlock Text="Chapters" FontSize="11" Foreground="#757575"/>
+                                                <TextBlock Text="Capítulos" FontSize="11" Foreground="#757575"/>
                                                 <TextBlock Text="{Binding ChaptersCount}" FontSize="14" FontWeight="Bold" 
                                                            Foreground="#1976D2"/>
                                             </StackPanel>
@@ -45,7 +44,7 @@
                                                 <TextBlock Text="{Binding Status}" FontSize="12" Foreground="#558B2F"/>
                                             </StackPanel>
                                         </StackPanel>
-                                        <Button Content="Continue Reading" HorizontalContentAlignment="Center" 
+                                        <Button Content="Continuar lendo" HorizontalContentAlignment="Center" 
                                                 Background="#558B2F" Foreground="White" FontSize="12"/>
                                     </StackPanel>
                                 </Border>
