@@ -1,6 +1,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using System.Collections.ObjectModel;
 using mangaReader.Models.DTOs;
+using mangaReader.Data;
 
 namespace mangaReader.ViewModels
 {

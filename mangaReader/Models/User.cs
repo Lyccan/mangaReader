@@ -1,9 +1,17 @@
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
 namespace mangaReader.Models
 {
     public class User
     {
-        public string Username { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; } = null!;
+        public string Username { get; set; } = null!;
+        
+        public string Email { get; set; } = null!;
+
+        public string Password { get; set; } = null!;
     }
 }

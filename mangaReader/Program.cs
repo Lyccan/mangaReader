@@ -1,5 +1,6 @@
 ﻿using System;
 using Avalonia;
+using mangaReader.Data;
 
 namespace mangaReader
 {
@@ -18,5 +19,6 @@ namespace mangaReader
                 .UsePlatformDetect()
                 .WithInterFont()
                 .LogToTrace();
+
     }
 }

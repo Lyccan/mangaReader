@@ -1,11 +1,14 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using mangaReader.Data;
 using mangaReader.ViewModels;
+using System;
 
 namespace mangaReader.ViewModels
 {
     public partial class MainWindowViewModel : ViewModelBase
     {
+
         [ObservableProperty]
         private object? currentView = null;
 
@@ -18,7 +21,7 @@ namespace mangaReader.ViewModels
 
         public MainWindowViewModel()
         {
-            CurrentView = homeViewModel;
+            CurrentView = homeViewModel;      
         }
 
         [RelayCommand]
